@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  node-app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - PORT=4009
+  #  if have more secret data in .env file use this below
+    # env_file:
+    #   - ./.env
